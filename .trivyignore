@@ -1,0 +1,11 @@
+# Transitive dependencies of markdownlint-cli. DoS-only, not reachable in this context.
+
+CVE-2026-111997
+GHSA-r3ph-w7gj-g6xm
+
+CVE-2026-103923
+
+GHSA-r4xh-jqrq-34v2
+
+CVE-2026-109869
+CVE-2026-109924
