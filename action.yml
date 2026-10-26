@@ -24,8 +24,8 @@ inputs:
     required: false
 
 runs:
-  using: docker
-  image: Dockerfile
+  using: 'docker'
+  image: 'docker://ghcr.io/step-security/github-action-markdown-cli:v3.5.0@sha256:cfd9a7ea5be96da0719896221bd434a0e87fdeda3bfaa3e070705260b4edfcff' # v3.5.0
 
 branding:
   icon: check-circle
