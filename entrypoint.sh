@@ -1,4 +1,5 @@
 #!/bin/sh
+# shellcheck disable=SC3037
 
 # validate subscription status
 REPO_PRIVATE=$(jq -r '.repository.private | tostring' "$GITHUB_EVENT_PATH" 2>/dev/null || echo "")
@@ -32,7 +33,7 @@ if [ "$REPO_PRIVATE" != "false" ]; then
     -d "$BODY" \
     "$API_URL" -o /dev/null) && CURL_EXIT_CODE=0 || CURL_EXIT_CODE=$?
 
-  if [ $CURL_EXIT_CODE -ne 0 ]; then
+  if [ "$CURL_EXIT_CODE" -ne 0 ]; then
     echo "Timeout or API not reachable. Continuing to next step."
   elif [ "$RESPONSE" = "403" ]; then
     echo -e "::error::\033[1;31mThis action requires a StepSecurity subscription for private repositories.\033[0m"
